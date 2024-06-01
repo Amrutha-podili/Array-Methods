@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Var-let-const</title>
+</head>
+<body>
+
+    <script>
+        //Array length()
+        const flowlength=["Rose","Lily","Lotus","Hibiscus","MariGold"];
+        document.write(flowlength.length);//output:5
+        //Array toString()
+        const flowtoString=["Rose","Lily","Lotus","Hibiscus","MariGold"];
+        document.write(flowtoString.toString());//output:[Rose,Lily,Lotus,Hibiscus,MariGold]
+        //Array at() or []
+        const flowat=["Rose","Lily","Lotus","Hibiscus","MariGold"];
+        document.write(flowat.at(2));//output:Lotus
+        //Array join()
+        const flowjoin=["Rose","Lily","Lotus","Hibiscus","MariGold"];
+        document.write(flowjoin.join("*"));//output:Rose*Lily*Lotus*Hibiscus*MariGold
+        //Array pop()
+        const flowpop=["Rose","Lily","Lotus","Hibiscus","MariGold"];
+        flowpop.pop();
+        document.write(flowpop);//output:Rose,Lily,Lotus,Hibiscus
+        //Array push()
+        const flowpush=["Rose","Lily","Lotus","Hibiscus","MariGold"];
+        flowpush.push("Ammu");
+        document.write(flowpush);//output:Rose,Lily.Lotus,Hibiscus,MariGold,Ammu
+        //Array shift()
+        const flowshift=["Rose","Lily","Lotus","Hibiscus","MariGold"];
+        flowshift.shift();
+        document.write(flowshift);//output:Lily,Lotus,Hibiscus,MariGold
+        //Array unshift()
+        const flowuns=["Rose","Lily","Lotus","Hibiscus","MariGold"];
+        flowuns.unshift("Jasmine");
+        document.write(flowuns);//output:Jasmine,Rose,Lily,Lotus,Hibiscus,MariGold
+        //Array concat()
+        const flowcon=["Rose","Lily","Lotus","Hibiscus","MariGold"];
+        const fruitcon=["Banana","Apple","Orange","Lemon"];
+        document.write(flowcon.concat(fruitcon));//Rose,Lily,Lotus,Hibiscus,MariGold,Banana,Apple,Orange,Lemon
+        //Array copyWithin()
+        const flowcwi=["Rose","Lily","Lotus","Hibiscus","MariGold"];
+        document.write(flowcwi.copyWithin(2,0));//output:Rose,Lily,Rose,Lily,Lotus
+        //Array flat()
+        const arrflat=[[1,2],[3,4],[5,6],[7,8]];
+        document.write(arrflat.flat());//output:1,2,3,4,5,6,7,8
+        //Array splice()
+        const flowsplice=["Rose","Lily","Lotus","Hibiscus","MariGold"];
+        flowsplice.splice(2,0,"jasmine");
+        document.write(flowsplice);//output:Rose,Lily,jasmine,Lotus,Hibiscus,MariGold
+        //Array slice()
+        const flowslice=["Rose","Lily","Lotus","Hibiscus","MariGold"];
+        document.write(flowslice.slice(1));//output:Lily,Lotus,Hibiscus,MariGold
+        //Array indexOf()
+        const flowio=["Rose","Lily","Lotus","Hibiscus","MariGold"];
+        document.write(flowio.indexOf("Lily"));//output:1
+        //Array lastIndexOf()
+        const flowlif=["Rose","Lily","Lotus","Hibiscus","MariGold","Lily"];
+        document.write(flowlif.lastIndexOf("Lily"));//output:5
+        //Array includes()
+        const flowinclueds=["Rose","Lily","Lotus","Hibiscus","MariGold"];
+        document.write(flowinclueds.includes("Lily"));//output:true
+        //Array find()
+        const arrf=[45,67,8,9,2,4,67];
+        const value1=arrf.find(myfunc);
+        function myfunc(value1,index,array){
+           return value1 > 18
+        }
+        document.write(value1);//output:45
+        //Array findIndex
+        const arrfi=[45,67,8,9,2,4,67];
+        const value2=arrfi.findIndex(myfunc);
+        function myfunc(value2,index,array){
+           return value2 > 18
+        }
+        document.write(value2);//output:0
+        //Array findLast
+        const arrfl=[45,67,8,9,2,4,67];
+        const value3=arrfl.findLast(myfunc);
+        function myfunc(value3,index,array){
+          return value3 > 18
+        }
+        document.write(value3);//output:67
+        //Array findLastIndex
+        const arrfli=[45,67,8,9,2,4,67];
+        const value=arrfli.findLastIndex(myfunc);
+        function myfunc(value,index,array){
+          return value > 18
+        }
+        document.write(value);//output:6
+        //Array sort()
+        const flowsort=["Rose","Lily","Lotus","Hibiscus","MariGold"];
+        document.write(flowsort.sort());//output:Hibiscus,Lily,Lotus,MariGold,Rose
+        //Array reverse()
+        const flowers=["Rose","Lily","Lotus","Hibiscus","MariGold"];
+        document.write(flowers.reverse());//output:MariGold,Hibiscus,Lotus,Lily,Rose
+        //Array Ascending order Numeric sort()
+        const arrA=[23,45,6,7,1,2,34];
+        document.write(arrA.sort(function(a,b){return a-b}));//output:1,2,6,7,23,34,45
+        //Array desending order Numeric sort()
+        const arrD=[23,45,6,7,1,2,34];
+        document.write(arrD.sort(function(a,b){return b-a}));//output:45,34,23,7,6,2,1
+        //Array random sort()
+        const arrR=[23,45,6,7,1,2,34];
+        document.write(arrR.sort(function(){return 0.5-Math.random()}));//output:2,34,7,6,45,23,1,;1,23,45,2,6,7,34.......
+        //Array math.min()
+        const arrM = [23, 45, 6, 7, 1, 2, 34];
+        let point = arrM.myFunction();
+        function myFunction() {
+          return Math.min.apply(null, arr); 
+        };
+        document.write(point); // Output:1
+        //Array Math.max()
+        const arrm = [23, 45, 6, 7, 1, 2, 34];
+        // Define the custom function as a prototype of Array
+        Array.prototype.myFunction = function() {
+             return Math.max.apply(null, this); // 'this' refers to the array on which the function is called
+        };
+        let points = arrm.myFunction(); // Call the custom function on the array
+        document.write(points); // output:45
+        //Array forEach()
+        const arrforE = [23, 45, 6, 7, 1, 2, 34];
+        arrforE.forEach(function(value){
+            document.write(value + "<br>")
+        });  //output: 23
+             //             45
+             //              6
+             //              7
+             //                1
+        //Array map()
+        const arrmap = [23, 45, 6, 7, 1, 2, 34];
+        const arr2=armapr.map(myFunc);
+        function myFunc(value,index,array){
+             return value *2
+        }
+        document.write(arr2)//output:46,90,12,14,2,4,68
+        //Array flatMap()
+        const arrflatM = [23, 45, 6, 7, 1, 2, 34];
+        const arr3=arrflatM.flatMap((x) => x*2);
+        document.write(arr3);//output:46,90,12,14,2,4,68
+        //Array filter()
+        const arrfilter = [23, 45, 6, 7, 1, 2, 34];
+        let arr4=arrfilter.filter(myfunc);
+        function myfunc(value){
+           return value>18
+        }
+        document.write(arr4)//output:23,45,34
+        //Array reduce()
+        const arrReduce = [23, 45, 6, 7, 1, 2, 34];
+        let arr0=arrReduce.reduce(myfunc);
+        function myfunc(total,value,index,array){
+           return total+value
+        }
+        document.write(arr0)//output:118
+        //Array reduceRight
+        const arrRight = [23, 45, 6, 7, 1, 2, 34];
+        let arr5=arrRight.reduceRight(myfunc);
+        function myfunc(total,value,index,array){
+          return total+value
+        }
+        document.write(arr5)//output:118
+        //Array every()
+        const arrevery = [23, 45, 6, 7, 1, 2, 34];
+        let arr6=arrevery.every(myfunc);
+        function myfunc(value){
+           return value>18
+        }
+        document.write(arr6)//output:false
+        //Array some()
+        const arrsome = [23, 45, 6, 7, 1, 2, 34];
+        let arr1=arrsome.some(myfunc);
+        function myfunc(value){
+           return value>18
+        }
+        document.write(arr1)//output:true
+        //Array from()
+        const arr=Array.from("ABCDEFGH");
+        document.write(arr)//output:A,B,C,D,E,F,G,H
+        //Array keys()
+        const fruitkey = ["Banana", "Orange", "Apple", "Mango"];
+        const key = fruitkey.keys();
+        for (let x of key) {
+             document.write(x + "<br/>");//output:0 
+                             //         1
+                              //        2
+                             //         3
+        } 
+        //Array values()
+        const fruitvalues = ["Banana", "Orange", "Apple", "Mango"];
+        const keys1 = fruitvalues.values();
+        for (let x of keys1) {
+             document.write(x + "<br/>");//output:Banana 
+                             //         Orange
+                              //        Apple
+                             //         Mango
+          }
+          //Array entries()
+          const fruitsent = ["Banana", "Orange", "Apple", "Mango"];
+          const keys0 = fruitsent.entries();
+          for (let x of keys0) {
+              document.write(x + "<br/>");//output:0,Banana 
+                             //         1,Orange
+                              //        2,Apple
+                             //         3,Mango
+          } 
+          //Array with()
+          const fruits = ["Banana", "Orange", "Apple", "Mango"];
+          const keys = fruits.with(2,"Kiwi");
+          document.write(keys);//output:Banana,Orange,Kiwi,Mango
+          //Array spread()
+          const a1 = ["jan", "feb", "mar"];
+          const a2 = ["april","may","june"];
+          const a3 = ["july","aug","sep"];
+          const total = [...a1,...a2,...a3];
+          document.write(total);//jan,feb,mar,april,may,june,july,aug,sep
+
+
+
+    
+
+
+ 
+
+    
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
